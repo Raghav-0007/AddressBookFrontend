@@ -4,7 +4,7 @@ class Contact {
         if (!this.isValidName(lastName)) throw new Error("Invalid Last Name");
         if (!this.isValidAddress(address)) throw new Error("Invalid Address");
         if (!this.isValidAddress(city)) throw new Error("Invalid City");
-        if (!this.isValidAddress(state)) throw new Error("Invalid State");
+        if (!this.isValidState(state)) throw new Error("Invalid State");
         if (!this.isValidZip(zip)) throw new Error("Invalid Zip Code");
         if (!this.isValidPhone(phone)) throw new Error("Invalid Phone Number");
         if (!this.isValidEmail(email)) throw new Error("Invalid Email");
@@ -27,6 +27,10 @@ class Contact {
         return /^[a-zA-Z0-9\s]{4,}$/.test(value);
     }
 
+    isValidState(state) {
+        return /^[A-Za-z\s]{2,}$/.test(state); // Allows full state names and abbreviations
+    }
+
     isValidZip(zip) {
         return /^\d{5,6}$/.test(zip);
     }
@@ -44,15 +48,4 @@ class Contact {
     }
 }
 
-try {
-    let contact1 = new Contact("John", "Doe", "123 Street", "NewYork", "NY", "123456", "9876543210", "john.doe@example.com");
-    console.log(contact1.toString());
-} catch (error) {
-    console.error(error.message);
-}
-
-try {
-    let contact2 = new Contact("jo", "smith", "abc", "la", "C", "1234", "98765", "invalid.email");
-} catch (error) {
-    console.error(error.message);
-}
+module.exports = Contact;

@@ -14,6 +14,20 @@ class AddressBook {
         }
     }
 
+    editContact(firstName, lastName, updatedDetails) {
+        let contact = this.contacts.find(c => c.firstName === firstName && c.lastName === lastName);
+        if (contact) {
+            Object.keys(updatedDetails).forEach(key => {
+                if (contact.hasOwnProperty(key) && updatedDetails[key] !== undefined) {
+                    contact[key] = updatedDetails[key];
+                }
+            });
+            console.log("Contact updated successfully.");
+        } else {
+            console.log("Contact not found.");
+        }
+    }
+
     displayContacts() {
         if (this.contacts.length === 0) {
             console.log("Address Book is empty.");
@@ -24,4 +38,4 @@ class AddressBook {
     }
 }
 
-module.exports = AddressBook; 
+module.exports = AddressBook;
