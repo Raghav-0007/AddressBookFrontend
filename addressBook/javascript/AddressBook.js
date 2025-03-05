@@ -28,6 +28,17 @@ class AddressBook {
         }
     }
 
+    deleteContact(firstName, lastName) {
+        let initialLength = this.contacts.length;
+        this.contacts = this.contacts.filter(c => !(c.firstName === firstName && c.lastName === lastName));
+
+        if (this.contacts.length < initialLength) {
+            console.log("Contact deleted successfully.");
+        } else {
+            console.log("Contact not found.");
+        }
+    }
+
     displayContacts() {
         if (this.contacts.length === 0) {
             console.log("Address Book is empty.");

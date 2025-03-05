@@ -13,10 +13,10 @@ try {
     console.error(error.message);
 }
 
-console.log("Before update:");
+console.log("Before deletion:");
 myAddressBook.displayContacts();
 
-myAddressBook.editContact("John", "Doe", { address: "789 Boulevard", city: "San Francisco" });
+myAddressBook.deleteContact("John", "Doe");
 
-console.log("After update:");
+console.log("After deletion:");
 myAddressBook.displayContacts();
