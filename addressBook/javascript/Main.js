@@ -34,3 +34,6 @@ myAddressBook.deleteContact("John", "Doe");
 console.log("\nAfter deletion:");
 myAddressBook.displayContacts();
 myAddressBook.countContacts();
+
+console.log("\nSorting Contacts Alphabetically:");
+myAddressBook.sortContactsByName();
