@@ -15,8 +15,10 @@ try {
 
 console.log("Before deletion:");
 myAddressBook.displayContacts();
+myAddressBook.countContacts();
 
 myAddressBook.deleteContact("John", "Doe");
 
 console.log("After deletion:");
 myAddressBook.displayContacts();
+myAddressBook.countContacts();
