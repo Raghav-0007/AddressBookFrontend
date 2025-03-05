@@ -10,12 +10,17 @@ try {
     let contact2 = new Contact("Jane", "Smith", "456 Avenue", "LosAngeles", "California", "789012", "8765432109", "jane.smith@example.com");
     myAddressBook.addContact(contact2);
 
-    // Trying to add a duplicate contact
-    let duplicateContact = new Contact("John", "Doe", "789 Boulevard", "San Francisco", "California", "654321", "9123456789", "john.duplicate@example.com");
-    myAddressBook.addContact(duplicateContact);
+    let contact3 = new Contact("Alice", "Johnson", "789 Road", "Texas", "NewYork", "654321", "9123456789", "alice.johnson@example.com");
+    myAddressBook.addContact(contact3);
 } catch (error) {
     console.error(error.message);
 }
 
-myAddressBook.displayContacts();
-myAddressBook.countContacts();
+console.log("Searching for contacts in NewYork:");
+myAddressBook.searchByCityOrState("NewYork");
+
+console.log("Searching for contacts in California:");
+myAddressBook.searchByCityOrState("California");
+
+console.log("Searching for contacts in Texas:");
+myAddressBook.searchByCityOrState("Texas");
