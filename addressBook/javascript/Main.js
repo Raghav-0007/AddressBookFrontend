@@ -35,5 +35,11 @@ console.log("\nAfter deletion:");
 myAddressBook.displayContacts();
 myAddressBook.countContacts();
 
-console.log("\nSorting Contacts Alphabetically:");
-myAddressBook.sortContactsByName();
+console.log("\nSorting Contacts by City:");
+myAddressBook.sortContactsByCity();
+
+console.log("\nSorting Contacts by State:");
+myAddressBook.sortContactsByState();
+
+console.log("\nSorting Contacts by Zip:");
+myAddressBook.sortContactsByZip();
