@@ -6,11 +6,18 @@ class AddressBook {
     }
 
     addContact(contact) {
-        if (contact instanceof Contact) {
+        if (!(contact instanceof Contact)) {
+            console.log("Invalid contact object.");
+            return;
+        }
+
+        let isDuplicate = this.contacts.some(c => c.firstName === contact.firstName && c.lastName === contact.lastName);
+
+        if (isDuplicate) {
+            console.log("Duplicate contact found. Cannot add.");
+        } else {
             this.contacts.push(contact);
             console.log("Contact added successfully.");
-        } else {
-            console.log("Invalid contact object.");
         }
     }
 
