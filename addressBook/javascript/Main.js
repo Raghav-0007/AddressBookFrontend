@@ -10,17 +10,11 @@ try {
     let contact2 = new Contact("Jane", "Smith", "456 Avenue", "LosAngeles", "California", "789012", "8765432109", "jane.smith@example.com");
     myAddressBook.addContact(contact2);
 
-    let contact3 = new Contact("Alice", "Johnson", "789 Road", "Texas", "NewYork", "654321", "9123456789", "alice.johnson@example.com");
+    let contact3 = new Contact("Alice", "Johnson", "789 Road", "NewYork", "NewYork", "654321", "9123456789", "alice.johnson@example.com");
     myAddressBook.addContact(contact3);
 } catch (error) {
     console.error(error.message);
 }
 
-console.log("Searching for contacts in NewYork:");
-myAddressBook.searchByCityOrState("NewYork");
-
-console.log("Searching for contacts in California:");
-myAddressBook.searchByCityOrState("California");
-
-console.log("Searching for contacts in Texas:");
-myAddressBook.searchByCityOrState("Texas");
+console.log("\nViewing Contacts by City and State:");
+myAddressBook.viewPersonsByCityOrState();

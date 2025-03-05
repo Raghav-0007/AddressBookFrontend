@@ -63,6 +63,35 @@ class AddressBook {
         }
     }
 
+    viewPersonsByCityOrState() {
+        let groupedByCity = {};
+        let groupedByState = {};
+
+        this.contacts.forEach(contact => {
+            if (!groupedByCity[contact.city]) {
+                groupedByCity[contact.city] = [];
+            }
+            groupedByCity[contact.city].push(contact.toString());
+
+            if (!groupedByState[contact.state]) {
+                groupedByState[contact.state] = [];
+            }
+            groupedByState[contact.state].push(contact.toString());
+        });
+
+        console.log("\nContacts grouped by City:");
+        Object.entries(groupedByCity).forEach(([city, contacts]) => {
+            console.log(`\nCity: ${city}`);
+            contacts.forEach(contact => console.log(contact));
+        });
+
+        console.log("\nContacts grouped by State:");
+        Object.entries(groupedByState).forEach(([state, contacts]) => {
+            console.log(`\nState: ${state}`);
+            contacts.forEach(contact => console.log(contact));
+        });
+    }
+
     displayContacts() {
         if (this.contacts.length === 0) {
             console.log("Address Book is empty.");
