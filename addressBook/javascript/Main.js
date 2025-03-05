@@ -16,5 +16,21 @@ try {
     console.error(error.message);
 }
 
+console.log("\nDisplaying all contacts:");
+myAddressBook.displayContacts();
+
+console.log("\nSearching for contacts in NewYork:");
+myAddressBook.searchByCityOrState("NewYork");
+
 console.log("\nViewing Contacts by City and State:");
 myAddressBook.viewPersonsByCityOrState();
+
+console.log("\nCounting Contacts by City and State:");
+myAddressBook.countContactsByCityOrState();
+
+console.log("\nDeleting John Doe:");
+myAddressBook.deleteContact("John", "Doe");
+
+console.log("\nAfter deletion:");
+myAddressBook.displayContacts();
+myAddressBook.countContacts();

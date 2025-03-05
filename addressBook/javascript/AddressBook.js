@@ -92,6 +92,28 @@ class AddressBook {
         });
     }
 
+    countContactsByCityOrState() {
+        let cityCount = this.contacts.reduce((acc, contact) => {
+            acc[contact.city] = (acc[contact.city] || 0) + 1;
+            return acc;
+        }, {});
+
+        let stateCount = this.contacts.reduce((acc, contact) => {
+            acc[contact.state] = (acc[contact.state] || 0) + 1;
+            return acc;
+        }, {});
+
+        console.log("\nCount of Contacts by City:");
+        Object.entries(cityCount).forEach(([city, count]) => {
+            console.log(`${city}: ${count} contact(s)`);
+        });
+
+        console.log("\nCount of Contacts by State:");
+        Object.entries(stateCount).forEach(([state, count]) => {
+            console.log(`${state}: ${count} contact(s)`);
+        });
+    }
+
     displayContacts() {
         if (this.contacts.length === 0) {
             console.log("Address Book is empty.");
